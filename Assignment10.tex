@@ -1,0 +1,78 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{amsmath}
+
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+    \usepackage{amsmath}
+       
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\def\inputGnumericTable{}
+\bibliographystyle{IEEEtran}
+
+\newcommand{\question}{\noindent \textbf{Question: }}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+
+
+\title{Assignment 10}
+\author{AKHILA, CS21BTECH11031}
+
+\begin{document}
+% make the title area
+\maketitle
+\question\\
+The random variable x is uniformly distributed in the interval $\theta - 2 < x < \theta + 2$. We 
+observe 100 samples $x_i$ and find that their average equals $\bar{x} =30 $. Find the 0.95 confidence 
+interval of $\theta$.\\
+
+\solution\\
+In this problem, x is uniform with $E\cbrak{x}=\theta$ and $\sigma^2=\frac{4}{3}$.\\
+We can use , however, the normal approximation for $\bar{x}$ because n =100.\\
+
+Here, $\gamma=0.95$\\
+We know,
+\begin{align}
+    \gamma = 1- \delta\\
+    \implies \delta=1-\gamma = 1-0.95 = 0.05
+\end{align}
+Also,
+    \begin{align}
+      u=1-\frac{\delta}{2}=1-\frac{0.05}{2}=0.975    
+    \end{align}
+Standard normal percentile $z_u$ for $ u=1-\frac{\delta}{2}$ is $z_{0.975}$ which is equal to 1.967\\
+
+We obtain the interval
+\begin{align}
+    \bar{x} \pm z_{0.975} \frac{\sigma}{\sqrt{n}} = 30 \pm 1.967 \frac{\frac{2}{\sqrt{3}}}{\sqrt{100}}\\
+    =30\pm 1.967 \frac{1}{5\sqrt{3}}\\
+    = 30\pm 0.227
+\end{align}
+
+\end{document}
